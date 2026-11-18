@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RS Sehat Sentosa | Profil Rumah Sakit</title>
+<style>
+:root{--teal:#087f8c;--navy:#10364a;--mint:#e9f7f6;--ink:#263b48;--muted:#667985}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;color:var(--ink);background:#f8fbfc;line-height:1.65}
+a{text-decoration:none;color:inherit}.container{width:min(1120px,90%);margin:auto}
+#welcome{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#092738,#087f8c);display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;transition:opacity .5s,visibility .5s}
+#welcome.hide{opacity:0;visibility:hidden}.welcome-box{background:white;padding:42px 28px;border-radius:22px;width:100%;max-width:520px;box-shadow:0 20px 60px #001b2b55}
+.welcome-logo{width:62px;height:62px;border-radius:18px;background:var(--teal);color:white;font-size:42px;line-height:62px;margin:0 auto 17px}
+.welcome-box h1{color:var(--navy);font-size:clamp(25px,5vw,34px);line-height:1.2}.welcome-box .sub{color:#6b7c85;letter-spacing:2px;font-size:12px;margin-top:9px}
+.welcome-box hr{border:0;border-top:1px solid #e2eaed;margin:27px 0}.welcome-box h3{font-size:13px;color:#657984;letter-spacing:2px}.welcome-box h2{font-size:clamp(19px,4vw,25px);color:var(--teal);margin:8px 0 26px}
+.btn{display:inline-block;border:0;border-radius:9px;padding:13px 22px;background:#0b999c;color:white;font-weight:bold;cursor:pointer;transition:.2s}.btn:hover{background:#066e78;transform:translateY(-2px)}
+header{position:sticky;top:0;z-index:20;background:white;box-shadow:0 3px 18px #09273812}.nav{min-height:76px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--navy);font-weight:800}.brand-mark{width:42px;height:42px;border-radius:12px;background:var(--teal);color:white;display:grid;place-items:center;font-size:28px}.brand small{display:block;color:#71838d;font-size:9px;letter-spacing:1.4px}
+nav{display:flex;gap:19px;flex-wrap:wrap;font-size:13px;font-weight:bold;color:#425968}nav a:hover{color:var(--teal)}
+.hero{min-height:570px;display:flex;align-items:center;color:white;background:linear-gradient(90deg,#082c40e8,#082c4060),url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=2000&q=85') center/cover}
+.hero-content{padding:85px 0;max-width:680px}.eyebrow{display:inline-block;border:1px solid #ffffff80;border-radius:30px;padding:7px 13px;font-size:12px;letter-spacing:1.2px;margin-bottom:20px}
+.hero h1{font-size:clamp(38px,6vw,64px);line-height:1.08;margin-bottom:20px}.hero p{max-width:590px;color:#e5f0f3;font-size:17px;margin-bottom:27px}.btn-outline{background:transparent;border:1px solid white;margin-left:8px}
+section{padding:76px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 38px}.section-head span{color:var(--teal);font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+h2.section-title{color:var(--navy);font-size:clamp(28px,4vw,39px);line-height:1.2;margin:9px 0 12px}.section-head p,.muted{color:var(--muted)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.about img{width:100%;height:370px;object-fit:cover;border-radius:18px;box-shadow:0 12px 35px #12334a18}
+.about h2{font-size:32px;color:var(--navy);line-height:1.2;margin-bottom:15px}.about p{color:var(--muted);margin:12px 0}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:22px}.stats strong{display:block;color:var(--teal);font-size:23px}.stats small{color:var(--muted)}
+.vision{background:var(--mint)}.vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{background:white;padding:28px;border-radius:16px;box-shadow:0 8px 25px #12334a0d}
+.panel h3{font-size:23px;color:var(--navy);margin-bottom:12px}.panel p,.panel li{color:var(--muted)}.panel ol{padding-left:21px}.panel li{margin:8px 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px #12334a12;transition:.2s}.card:hover{transform:translateY(-5px)}
+.card img{display:block;width:100%;height:190px;object-fit:cover}.card-body{padding:19px}.card h3{color:var(--navy);margin-bottom:7px}.card p{font-size:14px;color:var(--muted)}
+.services{background:#f0f6f8}.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.service{background:white;border:1px solid #e2ecef;border-radius:13px;padding:20px 12px;text-align:center}.service span{font-size:27px}.service b{display:block;color:var(--navy);font-size:14px;margin-top:7px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.contact{background:var(--navy);color:white;border-radius:16px;padding:28px}.contact h3{font-size:23px;margin-bottom:13px}.contact p{color:#dce9ed;margin:8px 0}
+.note{background:white;border:1px solid #e1ebee;border-radius:16px;padding:28px;color:var(--muted)}.note h3{color:var(--navy);margin-bottom:10px}
+footer{background:#092738;color:#d8e7eb;text-align:center;padding:24px 10px;font-size:13px}
+@media(max-width:800px){.nav{padding:14px 0;align-items:flex-start;flex-direction:column}nav{gap:12px}.about,.vision-grid,.contact-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.service-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.cards{grid-template-columns:1fr}.hero{min-height:510px}.hero h1{font-size:39px}.btn-outline{margin:12px 0 0}.about img{height:260px}section{padding:57px 0}}
+</style>
+</head>
+<body>
+<div id="welcome"><div class="welcome-box">
+<div class="welcome-logo">+</div><h1>RS SEHAT SENTOSA</h1>
+<p class="sub">WEBSITE PROFIL RUMAH SAKIT</p><hr>
+<h3>DIBUAT OLEH</h3><h2>RAFFA ADZRIL ALJABAR</h2>
+<button class="btn" onclick="masukWebsite()">MASUK KE WEBSITE</button>
+</div></div>
+<header><div class="container nav">
+<a class="brand" href="#beranda"><span class="brand-mark">+</span><span>RS SEHAT SENTOSA<small>MELAYANI DENGAN SEPENUH HATI</small></span></a>
+<nav><a href="#beranda">Beranda</a><a href="#profil">Profil</a><a href="#visimisi">Visi & Misi</a><a href="#fasilitas">Fasilitas</a><a href="#layanan">Layanan</a><a href="#kontak">Kontak</a></nav>
+</div></header>
+<main>
+<section class="hero" id="beranda"><div class="container hero-content">
+<span class="eyebrow">RUMAH SAKIT UMUM · PROFESIONAL & TERPERCAYA</span>
+<h1>Kesehatan Anda,<br>Prioritas Kami.</h1>
+<p>Rumah Sakit Sehat Sentosa hadir dengan lingkungan yang nyaman, tenaga kesehatan profesional, serta fasilitas pelayanan kesehatan terpadu untuk keluarga.</p>
+<a class="btn" href="#layanan">Lihat Layanan</a><a class="btn btn-outline" href="#kontak">Hubungi Kami</a>
+</div></section>
+<section id="profil"><div class="container about">
+<img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1100&q=85" alt="Gedung dan lingkungan rumah sakit modern">
+<div><span class="eyebrow" style="color:#087f8c;border-color:#b9dddd">PROFIL RUMAH SAKIT</span>
+<h2>Pelayanan kesehatan yang aman dan nyaman</h2>
+<p>Rumah Sakit Sehat Sentosa adalah contoh rumah sakit umum yang mengutamakan keselamatan pasien, keramahan pelayanan, dan peningkatan mutu secara berkelanjutan.</p>
+<p>Kami berkomitmen memberikan pelayanan yang mudah dijangkau masyarakat dengan dukungan fasilitas medis dan nonmedis yang memadai.</p>
+<div class="stats"><div><strong>24 Jam</strong><small>Instalasi gawat darurat</small></div><div><strong>Terpadu</strong><small>Pelayanan kesehatan</small></div><div><strong>Ramah</strong><small>Berorientasi pasien</small></div></div>
+</div></div></section>
+<section class="vision" id="visimisi"><div class="container">
+<div class="section-head"><span>Arah dan tujuan</span><h2 class="section-title">Visi dan Misi</h2><p>Menjadi rumah sakit yang mengutamakan mutu, keselamatan, dan kepedulian kepada masyarakat.</p></div>
+<div class="vision-grid"><article class="panel"><h3>◎ Visi</h3><p>Menjadi rumah sakit pilihan masyarakat yang unggul dalam pelayanan kesehatan, profesional, modern, dan terpercaya.</p></article>
+<article class="panel"><h3>✓ Misi</h3><ol><li>Memberikan pelayanan kesehatan yang aman, bermutu, dan berorientasi pada pasien.</li><li>Mengembangkan tenaga medis dan nonmedis yang profesional serta berintegritas.</li><li>Menyediakan fasilitas dan teknologi kesehatan sesuai kebutuhan pelayanan.</li><li>Meningkatkan kepedulian melalui edukasi dan kegiatan kesehatan masyarakat.</li><li>Menerapkan tata kelola rumah sakit yang efektif dan bertanggung jawab.</li></ol></article></div>
+</div></section>
+<section id="fasilitas"><div class="container">
+<div class="section-head"><span>Fasilitas rumah sakit</span><h2 class="section-title">Fasilitas Lengkap untuk Pasien</h2><p>Contoh fasilitas yang ditampilkan pada website profil rumah sakit.</p></div>
+<div class="cards">
+<article class="card"><img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=80" alt="Ruang rawat inap"><div class="card-body"><h3>Rawat Inap</h3><p>Kamar perawatan dengan tempat tidur pasien dan fasilitas pendukung.</p></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=900&q=80" alt="Ruang gawat darurat"><div class="card-body"><h3>IGD 24 Jam</h3><p>Area penanganan awal untuk kondisi darurat.</p></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80" alt="Laboratorium medis"><div class="card-body"><h3>Laboratorium</h3><p>Pemeriksaan sampel untuk membantu pemeriksaan pasien.</p></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&w=900&q=80" alt="Fasilitas radiologi"><div class="card-body"><h3>Radiologi</h3><p>Fasilitas pemeriksaan pencitraan medis.</p></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" alt="Ruang konsultasi"><div class="card-body"><h3>Poli Rawat Jalan</h3><p>Ruang konsultasi dan pemeriksaan oleh dokter.</p></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80" alt="Pelayanan farmasi"><div class="card-body"><h3>Farmasi</h3><p>Pelayanan obat dan informasi penggunaan obat.</p></div></article>
+</div></div></section>
+<section class="services" id="layanan"><div class="container">
+<div class="section-head"><span>Pelayanan kami</span><h2 class="section-title">Layanan Kesehatan</h2><p>Jenis layanan contoh pada konsep website ini.</p></div>
+<div class="service-grid">
+<div class="service"><span>🚑</span><b>IGD 24 Jam</b></div><div class="service"><span>🩺</span><b>Poli Umum</b></div><div class="service"><span>👶</span><b>Kesehatan Ibu & Anak</b></div><div class="service"><span>🦷</span><b>Klinik Gigi</b></div>
+<div class="service"><span>🧪</span><b>Laboratorium</b></div><div class="service"><span>🩻</span><b>Radiologi</b></div><div class="service"><span>💊</span><b>Farmasi</b></div><div class="service"><span>🛏️</span><b>Rawat Inap</b></div>
+</div></div></section>
+<section id="kontak"><div class="container">
+<div class="section-head"><span>Informasi</span><h2 class="section-title">Hubungi Rumah Sakit</h2><p>Data kontak berikut adalah contoh dan dapat diganti.</p></div>
+<div class="contact-grid"><div class="contact"><h3>RS Sehat Sentosa</h3><p>⌖ Alamat: Jl. Kesehatan No. 10, Indonesia</p><p>☎ Telepon: (021) 1234-5678</p><p>✉ Email: info@sehat-sentosa.example</p><p>◷ IGD: 24 jam (contoh informasi)</p></div>
+<div class="note"><h3>Catatan</h3>Website ini merupakan contoh/tugas sekolah. Nama rumah sakit, alamat, nomor telepon, dan fasilitas merupakan informasi fiktif. Foto gedung dan fasilitas dimuat dari Unsplash sehingga memerlukan koneksi internet.</div></div>
+</div></section>
+</main>
+<footer>© 2026 RS Sehat Sentosa<br>Website dibuat oleh RAFFA ADZRIL ALJABAR</footer>
+<script>
+function masukWebsite(){document.getElementById("welcome").classList.add("hide");}
+</script>
+</body>
+</html>
